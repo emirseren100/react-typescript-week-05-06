@@ -1,14 +1,18 @@
 import Button from "./Button";
 
-function Card() {
+type CardProps = {
+  title: string;
+  description: string;
+  tech: string;
+};
+
+function Card({ title, description, tech }: CardProps) {
   return (
     <article className="project-card">
-      <h2>Week 03 Todo App</h2>
-      <p>
-        DOM, event, array, object ve localStorage kullanılarak yapılmış görev
-        listesi uygulaması.
-      </p>
-      <Button />
+      <p className="card-tech">{tech}</p>
+      <h2>{title}</h2>
+      <p>{description}</p>
+      <Button label="Projeyi Gör" />
     </article>
   );
 }

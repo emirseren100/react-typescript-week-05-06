@@ -91,3 +91,10 @@ body {
 .primary-button:hover {
   background-color: #1d4ed8;
 }
+
+.card-tech {
+  margin: 0 0 12px;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 700;
+}
