@@ -1,25 +1,35 @@
 import Header from "./components/Header";
-import Card from "./components/Card";
+import ProjectList from "./components/ProjectList";
+import type { Project } from "./types/project";
 import "./App.css";
 
-const projects = [
+const projects: Project[] = [
   {
+    id: 1,
     title: "Week 03 Todo App",
     description:
       "DOM, event, array, object ve localStorage kullanılarak yapılmış görev listesi uygulaması.",
     tech: "JavaScript • DOM • localStorage",
+    category: "Frontend Practice",
+    status: "completed",
   },
   {
-    title: "Week 04 Portfolio",
+    id: 2,
+    title: "GameDev Task Manager",
     description:
-      "Semantic HTML, CSS Grid, responsive tasarım ve erişilebilirlik temelleriyle hazırlanmış portfolyo sayfası.",
-    tech: "HTML • CSS • Responsive",
+      "Oyun geliştirme sürecinde görevleri takip etmek için tasarlanmış proje kartı ve görev yönetimi fikri.",
+    tech: "React • TypeScript • Components",
+    category: "Game Tool",
+    status: "in-progress",
   },
   {
-    title: "Week 05 React Intro",
+    id: 3,
+    title: "Portfolio Website",
     description:
-      "React component, JSX, import/export ve props mantığını öğrenmek için hazırlanmış başlangıç projesi.",
-    tech: "React • TypeScript • Vite",
+      "Semantic HTML, CSS Grid, responsive tasarım ve erişilebilirlik temelleriyle hazırlanmış kişisel portfolyo.",
+    tech: "HTML • CSS • GitHub Pages",
+    category: "Portfolio",
+    status: "planned",
   },
 ];
 
@@ -31,26 +41,17 @@ function App() {
       <main className="page-content">
         <section className="section-title">
           <p className="eyebrow">Component Practice</p>
-          <h2>Projeler</h2>
+          <h2>Oyun ve Proje Kartları</h2>
           <p>
-            Bu sayfa React component, import/export ve props mantığını öğrenmek
-            için hazırlandı.
+            Bu sayfa TypeScript props, component parçalama ve array üzerinden
+            kart render etme mantığını öğrenmek için hazırlandı.
           </p>
         </section>
 
-        <section className="project-list">
-          {projects.map((project) => (
-            <Card
-              key={project.title}
-              title={project.title}
-              description={project.description}
-              tech={project.tech}
-            />
-          ))}
-        </section>
+        <ProjectList projects={projects} />
       </main>
     </>
   );
 }
 
-export default App;
+export default App; 
