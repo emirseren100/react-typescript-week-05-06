@@ -249,3 +249,39 @@ body {
   margin-bottom: 0;
   color: #4b5563;
 }
+
+.state-controls button.is-active {
+  background-color: #2563eb;
+  color: white;
+}
+
+.feedback-card button {
+  margin-top: 16px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 999px;
+  background-color: #2563eb;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.feedback-card button:hover {
+  background-color: #1d4ed8;
+}
+
+.feedback-loading {
+  border-color: #93c5fd;
+  background-color: #eff6ff;
+}
+
+.feedback-error {
+  border-color: #fca5a5;
+  background-color: #fef2f2;
+}
+
+.feedback-empty {
+  border-color: #d1d5db;
+  background-color: #f9fafb;
+}
