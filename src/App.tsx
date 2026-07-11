@@ -1,3 +1,6 @@
+import Counter from "./components/Counter";
+import ModalToggle from "./components/ModalToggle";
+import InputPreview from "./components/InputPreview";
 import Header from "./components/Header";
 import ProjectList from "./components/ProjectList";
 import type { Project } from "./types/project";
@@ -49,6 +52,11 @@ function App() {
         </section>
 
         <ProjectList projects={projects} />
+        <section className="state-practice">
+  <Counter />
+  <ModalToggle />
+  <InputPreview />
+</section>
       </main>
     </>
   );
