@@ -205,3 +205,47 @@ body {
   border-radius: 10px;
   font: inherit;
 }
+
+.project-state-demo {
+  margin-top: 24px;
+}
+
+.state-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.state-controls button {
+  padding: 10px 16px;
+  border: 1px solid #2563eb;
+  border-radius: 999px;
+  background-color: white;
+  color: #2563eb;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.state-controls button:hover {
+  background-color: #eff6ff;
+}
+
+.feedback-card {
+  padding: 32px;
+  border: 1px solid #d1d5db;
+  border-radius: 16px;
+  background-color: white;
+  text-align: center;
+}
+
+.feedback-card h3 {
+  margin-top: 0;
+  color: #111827;
+}
+
+.feedback-card p {
+  margin-bottom: 0;
+  color: #4b5563;
+}
