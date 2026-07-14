@@ -4,6 +4,7 @@ import InputPreview from "./components/InputPreview";
 import Header from "./components/Header";
 import ProjectStateDemo from "./components/ProjectStateDemo";
 import type { Project } from "./types/project";
+import TicTacToe from "./components/tic-tac-toe/TicTacToe";
 import "./App.css";
 
 const projects: Project[] = [
@@ -50,7 +51,7 @@ function App() {
             kart render etme mantığını öğrenmek için hazırlandı.
           </p>
         </section>
-
+<TicTacToe />
 <ProjectStateDemo projects={projects} />
         <section className="state-practice">
   <Counter />
