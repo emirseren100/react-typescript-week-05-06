@@ -4,6 +4,12 @@ import "./TicTacToe.css";
 type Player = "X" | "O";
 type SquareValue = Player | null;
 
+type Scores = {
+  X: number;
+  O: number;
+  draws: number;
+};
+
 type SquareProps = {
   value: SquareValue;
   onSquareClick: () => void;
@@ -80,6 +86,14 @@ function TicTacToe() {
 
   const [currentMove, setCurrentMove] = useState(0);
 
+  const [scores, setScores] = useState<Scores>({
+    X: 0,
+    O: 0,
+    draws: 0,
+  });
+
+  const [roundScored, setRoundScored] = useState(false);
+
   const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
 
@@ -91,10 +105,47 @@ function TicTacToe() {
 
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
+
+    const winner = calculateWinner(nextSquares);
+
+    const isDraw =
+      !winner && nextSquares.every((square) => square !== null);
+
+    if (!roundScored && winner) {
+      setScores((previousScores) => ({
+        ...previousScores,
+        [winner]: previousScores[winner] + 1,
+      }));
+
+      setRoundScored(true);
+    } else if (!roundScored && isDraw) {
+      setScores((previousScores) => ({
+        ...previousScores,
+        draws: previousScores.draws + 1,
+      }));
+
+      setRoundScored(true);
+    }
   }
 
   function jumpTo(nextMove: number) {
     setCurrentMove(nextMove);
+  }
+
+  function resetRound() {
+    setHistory([Array<SquareValue>(9).fill(null)]);
+    setCurrentMove(0);
+    setRoundScored(false);
+  }
+
+  function resetScores() {
+    setScores({
+      X: 0,
+      O: 0,
+      draws: 0,
+    });
+
+    resetRound();
   }
 
   const moves = history.map((_squares, move) => {
@@ -125,6 +176,23 @@ function TicTacToe() {
         </p>
       </div>
 
+      <div className="ttt-scoreboard" aria-label="Skor tablosu">
+        <div className="ttt-score">
+          <span>X Galibiyet</span>
+          <strong>{scores.X}</strong>
+        </div>
+
+        <div className="ttt-score">
+          <span>O Galibiyet</span>
+          <strong>{scores.O}</strong>
+        </div>
+
+        <div className="ttt-score">
+          <span>Beraberlik</span>
+          <strong>{scores.draws}</strong>
+        </div>
+      </div>
+
       <div className="ttt-game">
         <Board
           xIsNext={xIsNext}
@@ -136,6 +204,20 @@ function TicTacToe() {
           <h3>Hamle Geçmişi</h3>
           <ol>{moves}</ol>
         </aside>
+      </div>
+
+      <div className="ttt-actions">
+        <button type="button" onClick={resetRound}>
+          Yeni Tur
+        </button>
+
+        <button
+          type="button"
+          className="ttt-secondary-button"
+          onClick={resetScores}
+        >
+          Skorları Sıfırla
+        </button>
       </div>
     </section>
   );

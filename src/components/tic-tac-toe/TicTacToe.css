@@ -131,3 +131,69 @@
     grid-template-columns: repeat(3, 72px);
   }
 }
+
+.ttt-scoreboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.ttt-score {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  background-color: #eff6ff;
+  text-align: center;
+}
+
+.ttt-score span {
+  color: #475569;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ttt-score strong {
+  color: #1d4ed8;
+  font-size: 30px;
+}
+
+.ttt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.ttt-actions button {
+  padding: 11px 18px;
+  border: 1px solid #2563eb;
+  border-radius: 999px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.ttt-actions button:hover {
+  background-color: #1d4ed8;
+}
+
+.ttt-actions .ttt-secondary-button {
+  background-color: #ffffff;
+  color: #2563eb;
+}
+
+.ttt-actions .ttt-secondary-button:hover {
+  background-color: #eff6ff;
+}
+
+@media (max-width: 560px) {
+  .ttt-scoreboard {
+    grid-template-columns: 1fr;
+  }
+}
