@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import ProjectStateDemo from "./components/ProjectStateDemo";
 import type { Project } from "./types/project";
 import TicTacToe from "./components/tic-tac-toe/TicTacToe";
+import LearningList from "./components/LearningList";
+import type { LearningItem } from "./components/LearningList";
 import "./App.css";
 
 const projects: Project[] = [
@@ -37,6 +39,27 @@ const projects: Project[] = [
   },
 ];
 
+const learningItems: LearningItem[] = [
+  {
+    id: 1,
+    title: "React component tekrar",
+    category: "React",
+    completed: true,
+  },
+  {
+    id: 2,
+    title: "Controlled form çalışması",
+    category: "Form",
+    completed: false,
+  },
+  {
+    id: 3,
+    title: "React Router sayfaları",
+    category: "Router",
+    completed: false,
+  },
+];
+
 function App() {
   return (
     <>
@@ -52,6 +75,7 @@ function App() {
           </p>
         </section>
 <TicTacToe />
+<LearningList items={learningItems} />
 <ProjectStateDemo projects={projects} />
         <section className="state-practice">
   <Counter />
