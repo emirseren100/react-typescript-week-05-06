@@ -8,6 +8,7 @@ import AppLayout from "./layouts/AppLayout";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import AboutPage from "./pages/AboutPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 import "./router.css";
 
@@ -28,6 +29,11 @@ function App() {
         <Route
           path="about"
           element={<AboutPage />}
+        />
+
+        <Route
+          path="*"
+          element={<NotFoundPage />}
         />
       </Route>
     </Routes>

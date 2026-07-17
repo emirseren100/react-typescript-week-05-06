@@ -210,3 +210,41 @@ a {
     padding: 20px;
   }
 }
+
+.not-found-page {
+  text-align: center;
+}
+
+.not-found-code {
+  margin: 0;
+  color: #2563eb;
+  font-size: clamp(72px, 16vw, 144px);
+  font-weight: 900;
+  line-height: 0.9;
+}
+
+.not-found-page .route-description {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.not-found-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border-radius: 999px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.not-found-link:hover {
+  background-color: #1d4ed8;
+}
+
+.not-found-link:focus-visible {
+  outline: 3px solid #facc15;
+  outline-offset: 3px;
+}
