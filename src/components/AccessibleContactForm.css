@@ -31,11 +31,6 @@
   gap: 8px;
 }
 
-.contact-form-field > span {
-  color: #111827;
-  font-weight: 700;
-}
-
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -84,4 +79,26 @@
   .contact-form-submit {
     width: 100%;
   }
+}
+
+.contact-form-field label {
+  color: #111827;
+  font-weight: 700;
+}
+
+.contact-form-help {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.contact-form-success {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid #86efac;
+  border-radius: 10px;
+  background-color: #f0fdf4;
+  color: #166534;
+  font-weight: 700;
 }
