@@ -6,6 +6,7 @@ import ProjectStateDemo from "./components/ProjectStateDemo";
 import type { Project } from "./types/project";
 import TicTacToe from "./components/tic-tac-toe/TicTacToe";
 import LearningList from "./components/LearningList";
+import AccessibleContactForm from "./components/AccessibleContactForm";
 import type { LearningItem } from "./components/LearningList";
 import "./App.css";
 
@@ -75,6 +76,7 @@ function App() {
           </p>
         </section>
 <TicTacToe />
+<AccessibleContactForm />
 <LearningList items={learningItems} />
 <ProjectStateDemo projects={projects} />
         <section className="state-practice">
