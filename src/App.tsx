@@ -3,6 +3,8 @@ import {
   Routes,
 } from "react-router";
 
+import AppLayout from "./layouts/AppLayout";
+
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import AboutPage from "./pages/AboutPage";
@@ -12,20 +14,22 @@ import "./router.css";
 function App() {
   return (
     <Routes>
-      <Route
-        path="/"
-        element={<HomePage />}
-      />
+      <Route element={<AppLayout />}>
+        <Route
+          index
+          element={<HomePage />}
+        />
 
-      <Route
-        path="/projects"
-        element={<ProjectsPage />}
-      />
+        <Route
+          path="projects"
+          element={<ProjectsPage />}
+        />
 
-      <Route
-        path="/about"
-        element={<AboutPage />}
-      />
+        <Route
+          path="about"
+          element={<AboutPage />}
+        />
+      </Route>
     </Routes>
   );
 }
