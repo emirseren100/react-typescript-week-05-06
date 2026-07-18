@@ -1,0 +1,156 @@
+.todo-app {
+  margin-top: 36px;
+  padding: 24px;
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  background-color: #f8fafc;
+}
+
+.todo-heading {
+  margin-bottom: 22px;
+}
+
+.todo-heading h2 {
+  margin: 8px 0;
+  color: #111827;
+  font-size: 30px;
+}
+
+.todo-heading p:last-child {
+  margin-bottom: 0;
+  color: #4b5563;
+}
+
+.todo-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.todo-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #111827;
+  font: inherit;
+}
+
+.todo-form input:focus {
+  border-color: #2563eb;
+  outline: 3px solid #bfdbfe;
+  outline-offset: 2px;
+}
+
+.todo-form button {
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 10px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.todo-form button:hover {
+  background-color: #1d4ed8;
+}
+
+.todo-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.todo-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.todo-content input {
+  width: 18px;
+  height: 18px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.todo-title {
+  color: #111827;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.todo-title-completed {
+  color: #64748b;
+  text-decoration: line-through;
+}
+
+.todo-delete-button {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background-color: #fef2f2;
+  color: #b91c1c;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.todo-delete-button:hover {
+  background-color: #fee2e2;
+}
+
+.todo-empty {
+  margin: 0;
+  padding: 28px;
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  color: #64748b;
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@media (max-width: 600px) {
+  .todo-form {
+    flex-direction: column;
+  }
+
+  .todo-form button {
+    width: 100%;
+  }
+
+  .todo-item {
+    align-items: flex-start;
+  }
+}
