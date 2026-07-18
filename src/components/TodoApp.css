@@ -141,6 +141,43 @@
   clip-path: inset(50%);
 }
 
+.todo-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.todo-filter-button {
+  padding: 8px 14px;
+  border: 1px solid #93c5fd;
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: #1d4ed8;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.todo-filter-button:hover {
+  background-color: #eff6ff;
+}
+
+.todo-filter-button-active {
+  border-color: #2563eb;
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.todo-filter-button-active:hover {
+  background-color: #1d4ed8;
+}
+
+.todo-filter-button:focus-visible {
+  outline: 3px solid #facc15;
+  outline-offset: 3px;
+}
+
 @media (max-width: 600px) {
   .todo-form {
     flex-direction: column;

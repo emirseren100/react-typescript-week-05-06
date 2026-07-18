@@ -11,6 +11,11 @@ type Todo = {
   completed: boolean;
 };
 
+type TodoFilter =
+  | "all"
+  | "active"
+  | "completed";
+
 const initialTodos: Todo[] = [
   {
     id: 1,
@@ -35,6 +40,9 @@ function TodoApp() {
 
   const [newTodoTitle, setNewTodoTitle] =
     useState("");
+
+  const [filter, setFilter] =
+    useState<TodoFilter>("all");
 
   function handleAddTodo(
     event: FormEvent<HTMLFormElement>,
@@ -84,6 +92,30 @@ function TodoApp() {
     );
   }
 
+  const visibleTodos = todos.filter((todo) => {
+    if (filter === "active") {
+      return todo.completed === false;
+    }
+
+    if (filter === "completed") {
+      return todo.completed === true;
+    }
+
+    return true;
+  });
+
+  function getEmptyMessage() {
+    if (filter === "active") {
+      return "Aktif görev bulunmuyor.";
+    }
+
+    if (filter === "completed") {
+      return "Tamamlanan görev bulunmuyor.";
+    }
+
+    return "Henüz görev bulunmuyor.";
+  }
+
   return (
     <section
       className="todo-app"
@@ -99,8 +131,8 @@ function TodoApp() {
         </h2>
 
         <p>
-          Görev ekle, tamamlandı olarak işaretle veya
-          listeden sil.
+          Görev ekle, tamamlandı olarak işaretle,
+          sil veya durumuna göre filtrele.
         </p>
       </div>
 
@@ -132,13 +164,61 @@ function TodoApp() {
         </button>
       </form>
 
-      {todos.length === 0 ? (
+      <div
+        className="todo-filters"
+        aria-label="Görev filtreleri"
+      >
+        <button
+          type="button"
+          className={
+            filter === "all"
+              ? "todo-filter-button todo-filter-button-active"
+              : "todo-filter-button"
+          }
+          aria-pressed={filter === "all"}
+          onClick={() => setFilter("all")}
+        >
+          Hepsi
+        </button>
+
+        <button
+          type="button"
+          className={
+            filter === "active"
+              ? "todo-filter-button todo-filter-button-active"
+              : "todo-filter-button"
+          }
+          aria-pressed={filter === "active"}
+          onClick={() => setFilter("active")}
+        >
+          Aktif
+        </button>
+
+        <button
+          type="button"
+          className={
+            filter === "completed"
+              ? "todo-filter-button todo-filter-button-active"
+              : "todo-filter-button"
+          }
+          aria-pressed={
+            filter === "completed"
+          }
+          onClick={() =>
+            setFilter("completed")
+          }
+        >
+          Tamamlanan
+        </button>
+      </div>
+
+      {visibleTodos.length === 0 ? (
         <p className="todo-empty">
-          Henüz görev bulunmuyor.
+          {getEmptyMessage()}
         </p>
       ) : (
         <ul className="todo-list">
-          {todos.map((todo) => (
+          {visibleTodos.map((todo) => (
             <li
               key={todo.id}
               className="todo-item"
