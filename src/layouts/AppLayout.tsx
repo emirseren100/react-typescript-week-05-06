@@ -1,6 +1,7 @@
 import { Outlet } from "react-router";
 
 import SiteNavbar from "../components/SiteNavbar";
+import ThemeToggle from "../components/ThemeToggle";
 
 function AppLayout() {
   return (
@@ -18,12 +19,15 @@ function AppLayout() {
               </p>
 
               <p className="site-brand-description">
-                Form, Router ve erişilebilirlik çalışmaları
+                Form, Router ve global state çalışmaları
               </p>
             </div>
           </div>
 
-          <SiteNavbar />
+          <div className="site-header-actions">
+            <SiteNavbar />
+            <ThemeToggle />
+          </div>
         </div>
       </header>
 
@@ -33,7 +37,7 @@ function AppLayout() {
 
       <footer className="site-footer">
         <p>
-          Week 06 — React Router Practice
+          Week 06 — React State Practice
         </p>
       </footer>
     </div>

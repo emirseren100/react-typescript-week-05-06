@@ -248,3 +248,103 @@ a {
   outline: 3px solid #facc15;
   outline-offset: 3px;
 }
+
+.app-theme-light {
+  --app-background: #f3f4f6;
+  --app-text: #111827;
+  --app-surface: #ffffff;
+  --app-soft-surface: #f8fafc;
+  --app-border: #d1d5db;
+  --app-muted-text: #4b5563;
+  --app-header: #111827;
+}
+
+.app-theme-dark {
+  --app-background: #020617;
+  --app-text: #f8fafc;
+  --app-surface: #111827;
+  --app-soft-surface: #1e293b;
+  --app-border: #334155;
+  --app-muted-text: #cbd5e1;
+  --app-header: #020617;
+}
+
+.app-theme {
+  min-height: 100vh;
+  background-color: var(--app-background);
+  color: var(--app-text);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.app-theme .site-header,
+.app-theme .site-footer {
+  background-color: var(--app-header);
+}
+
+.app-theme .route-page {
+  border-color: var(--app-border);
+  background-color: var(--app-surface);
+}
+
+.app-theme .route-card,
+.app-theme .todo-app,
+.app-theme .todo-item {
+  border-color: var(--app-border);
+  background-color: var(--app-soft-surface);
+}
+
+.app-theme-dark .route-page h1,
+.app-theme-dark .route-page h2,
+.app-theme-dark .todo-heading h2,
+.app-theme-dark .todo-title {
+  color: var(--app-text);
+}
+
+.app-theme-dark .route-description,
+.app-theme-dark .route-card p,
+.app-theme-dark .todo-heading p:last-child {
+  color: var(--app-muted-text);
+}
+
+.app-theme-dark .todo-form input {
+  border-color: var(--app-border);
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+.site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.theme-toggle {
+  flex-shrink: 0;
+  padding: 9px 14px;
+  border: 1px solid #475569;
+  border-radius: 999px;
+  background-color: #1e293b;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background-color: #334155;
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid #facc15;
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .site-header-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+}
