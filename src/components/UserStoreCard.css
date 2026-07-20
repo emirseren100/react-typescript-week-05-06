@@ -1,0 +1,102 @@
+.user-store-card {
+  margin-top: 32px;
+  padding: 24px;
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  background-color: #f8fafc;
+}
+
+.user-store-card h2 {
+  margin: 8px 0;
+  color: #111827;
+  font-size: 28px;
+}
+
+.user-store-description {
+  margin-bottom: 22px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.user-profile p {
+  margin: 0;
+}
+
+.user-profile-label {
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.user-profile-name {
+  margin-top: 6px !important;
+  color: #111827;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.user-profile-role {
+  margin-top: 4px !important;
+  color: #64748b;
+}
+
+.user-profile button {
+  flex-shrink: 0;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 999px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.user-profile button:hover {
+  background-color: #1d4ed8;
+}
+
+.user-profile button:focus-visible {
+  outline: 3px solid #facc15;
+  outline-offset: 3px;
+}
+
+.app-theme-dark .user-store-card,
+.app-theme-dark .user-profile {
+  border-color: #334155;
+  background-color: #1e293b;
+}
+
+.app-theme-dark .user-store-card h2,
+.app-theme-dark .user-profile-name {
+  color: #f8fafc;
+}
+
+.app-theme-dark .user-store-description,
+.app-theme-dark .user-profile-role {
+  color: #cbd5e1;
+}
+
+@media (max-width: 600px) {
+  .user-profile {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .user-profile button {
+    width: 100%;
+  }
+}

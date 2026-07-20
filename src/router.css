@@ -348,3 +348,28 @@ a {
     width: 100%;
   }
 }
+
+.site-navigation-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-session-status {
+  margin: 0;
+  padding: 7px 11px;
+  border: 1px solid #475569;
+  border-radius: 999px;
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .site-navigation-area {
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+}
